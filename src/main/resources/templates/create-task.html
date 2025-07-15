@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+        }
+        .create-task-outer {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 7rem;
+        }
+        .create-task-card {
+            background: #fffbe8;
+            box-shadow: 0 4px 24px rgba(247,107,28,0.13);
+            border-radius: 20px;
+            padding: 2.5rem 2.2rem 2rem 2.2rem;
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .create-task-card h2 {
+            margin-bottom: 0.7rem;
+            color: #f76b1c;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .create-task-card label {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: #a67c52;
+        }
+        .create-task-card input,
+        .create-task-card textarea,
+        .create-task-card select {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
+            background: #fff;
+            transition: border 0.18s;
+        }
+        .create-task-card input:focus,
+        .create-task-card textarea:focus,
+        .create-task-card select:focus {
+            border: 1.5px solid #f76b1c;
+            outline: none;
+        }
+        .create-task-card button[type="submit"] {
+            background: linear-gradient(90deg, #f76b1c 0%, #f6d365 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 0.7rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(247,107,28,0.08);
+            transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .create-task-card button[type="submit"]:hover {
+            background: linear-gradient(90deg, #f6d365 0%, #f76b1c 100%);
+            box-shadow: 0 4px 16px rgba(247,107,28,0.13);
+            transform: scale(1.03);
+        }
+        @media (max-width: 600px) {
+            .create-task-card {
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">🗂️ TaskManager</span>
+        <a href="/home.html" class="navbar-link" id="navTasks">Tasks</a>
+        <a href="/home.html" class="navbar-link" id="navMyTasks">My Tasks</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+<div id="toastContainer"></div>
+<div class="create-task-outer">
+    <div class="create-task-card">
+        <h2>Create Task</h2>
+        <form id="createTaskForm">
+            <label>Task Title:</label>
+            <input type="text" id="taskTitleInput" required placeholder="Enter task title">
+            <label>Task Description:</label>
+            <textarea id="taskDescriptionInput" rows="3" required placeholder="Enter task description"></textarea>
+            <label>Assign To:</label>
+            <select id="assignedToSelect" required></select>
+            <label>Start Date:</label>
+            <input type="datetime-local" id="startDateInput" required>
+            <label>Deadline Date:</label>
+            <input type="datetime-local" id="deadlineDateInput" required>
+            <label>Status:</label>
+            <select id="statusSelect">
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="BACKLOG">Backlog</option>
+                <option value="COMPLETED">Completed</option>
+            </select>
+            <label>Priority:</label>
+            <select id="prioritySelect">
+                <option value="LOW">Low</option>
+                <option value="MID">Mid</option>
+                <option value="HIGH">High</option>
+            </select>
+            <button type="submit" class="btn-primary" id="saveTaskBtn">Create Task</button>
+        </form>
+    </div>
+</div>
+<script src="/js/navbar.js"></script>
+<script src="/js/create-task.js"></script>
+</body>
+</html> 

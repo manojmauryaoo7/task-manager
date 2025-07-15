@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">Task Manager</span>
+        <a href="#" class="navbar-link" id="navAllTasks">All Tasks</a>
+        <a href="#" class="navbar-link" id="navMyTasks">My Tasks</a>
+        <a href="#" class="navbar-link" id="navCreateTask">Create Task</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+
+<div id="toastContainer"></div>
+
+<div class="main-content">
+    <div class="form-container">
+        <div class="form-card">
+            <h2>Update Task</h2>
+            <form id="updateTaskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Task Title:</label>
+                    <input type="text" id="taskTitle" required placeholder="Enter task title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="taskDescription">Task Description:</label>
+                    <textarea id="taskDescription" rows="3" required placeholder="Enter task description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="assignedToSelect">Assign To:</label>
+                    <select id="assignedToSelect" required></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="datetime-local" id="startDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="deadlineDate">Deadline Date:</label>
+                    <input type="datetime-local" id="deadlineDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="statusSelect">Status:</label>
+                    <select id="statusSelect">
+                        <option value="IN_PROGRESS">In Progress</option>
+                        <option value="BACKLOG">Backlog</option>
+                        <option value="COMPLETED">Completed</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prioritySelect">Priority:</label>
+                    <select id="prioritySelect">
+                        <option value="LOW">Low</option>
+                        <option value="MID">Mid</option>
+                        <option value="HIGH">High</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Update Task</button>
+                    <button type="button" class="btn-secondary" onclick="window.location.href='/home.html'">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/navbar.js"></script>
+<script src="/js/update-task.js"></script>
+</body>
+</html> 

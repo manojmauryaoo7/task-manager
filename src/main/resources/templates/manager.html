@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">🗂️ TaskManager</span>
+        <a href="#" class="navbar-link" id="navAllTasks">All Tasks</a>
+        <a href="#" class="navbar-link" id="navMyTasks">My Tasks</a>
+        <a href="#" class="navbar-link active" id="navManager">Manager Panel</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+<div id="toastContainer"></div>
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="card-bg">
+        <h2>Manager Panel</h2>
+        <div id="managerUserList" class="manager-user-list"></div>
+    </div>
+</div>
+<script src="/js/navbar.js"></script>
+<script src="/js/manager.js"></script>
+</body>
+</html> 

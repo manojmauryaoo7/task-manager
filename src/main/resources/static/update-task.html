@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">🗂️ TaskManager</span>
+        <a href="/home.html" class="navbar-link" id="navTasks">All Tasks</a>
+        <a href="/home.html" class="navbar-link" id="navMyTasks">My Tasks</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+<div id="toastContainer"></div>
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="card-bg">
+        <h2>Update Task</h2>
+        <form id="updateTaskForm">
+            <label>Task Title:</label>
+            <input type="text" id="taskTitleInput" required placeholder="Enter task title">
+            <label>Task Description:</label>
+            <textarea id="taskDescriptionInput" rows="3" required placeholder="Enter task description"></textarea>
+            <label>Assign To:</label>
+            <select id="assignedToSelect" required></select>
+            <label>Start Date:</label>
+            <input type="datetime-local" id="startDateInput" required>
+            <label>Deadline Date:</label>
+            <input type="datetime-local" id="deadlineDateInput" required>
+            <label>Status:</label>
+            <select id="statusSelect">
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="BACKLOG">Backlog</option>
+                <option value="COMPLETED">Completed</option>
+            </select>
+            <label>Priority:</label>
+            <select id="prioritySelect">
+                <option value="LOW">Low</option>
+                <option value="MID">Mid</option>
+                <option value="HIGH">High</option>
+            </select>
+            <button type="submit" class="btn-primary" id="saveTaskBtn">Update Task</button>
+        </form>
+    </div>
+</div>
+<script src="/js/navbar.js"></script>
+<script src="/js/update-task.js"></script>
+</body>
+</html> 
