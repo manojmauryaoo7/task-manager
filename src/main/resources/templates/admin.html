@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">🗂️ TaskManager</span>
+        <a href="#" class="navbar-link" id="navTasks">Tasks</a>
+        <a href="#" class="navbar-link" id="navMyTasks">My Tasks</a>
+        <a href="#" class="navbar-link" id="navAdmin">Admin Panel</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+<div id="toastContainer"></div>
+<div class="admin-container" id="mainContent">
+    <div class="admin-card">
+        <h2 id="adminPanelTitle">Admin Panel</h2>
+        <div id="adminUserList" class="admin-user-list"></div>
+        <div id="adminManagerList" style="display:none;"></div>
+    </div>
+</div>
+<script src="/js/navbar.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html> 

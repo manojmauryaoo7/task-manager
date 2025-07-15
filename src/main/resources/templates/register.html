@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            background: var(--primary-bg);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .auth-card {
+            background: #fff;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            padding: 2.5rem 2.2rem 2rem 2.2rem;
+            max-width: 420px;
+            width: 100%;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .auth-card h2 {
+            margin-bottom: 0.7rem;
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .auth-card label {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            color: var(--text-light);
+        }
+        .auth-card input, .auth-card select {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-size: 1rem;
+            margin-bottom: 0.7rem;
+            background: var(--input-bg);
+            transition: border var(--transition);
+        }
+        .auth-card input:focus, .auth-card select:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+        }
+        .auth-card button[type="submit"] {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 0.7rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+            transition: background var(--transition), box-shadow var(--transition), transform 0.1s;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .auth-card button[type="submit"]:hover {
+            background: var(--primary-light);
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+            transform: scale(1.03);
+        }
+        .auth-card p {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--text-light);
+        }
+        .auth-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .auth-card a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: var(--danger);
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .auth-card {
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="auth-card">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required autofocus>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter full name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email">
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="ROLE_USER">User</option>
+            <option value="ROLE_MANAGER">Manager</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+    <div id="registerError" class="error"></div>
+    <p>Already have an account? <a href="/login.html">Login here</a></p>
+</div>
+<script src="/js/register.js"></script>
+</body>
+</html> 

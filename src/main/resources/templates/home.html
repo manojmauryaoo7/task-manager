@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-left">
+        <span class="navbar-logo" id="navHome">Task Manager</span>
+        <a href="#" class="navbar-link" id="navAllTasks">All Tasks</a>
+        <a href="#" class="navbar-link" id="navMyTasks">My Tasks</a>
+        <a href="/create-task.html" class="navbar-link" id="navCreateTask">Create Task</a>
+    </div>
+    <div class="navbar-right">
+        <span class="navbar-profile-icon" id="profileIcon">👤</span>
+    </div>
+</nav>
+<div class="header-container">
+    <!-- Search, filter, and sort row below navbar -->
+    <div class="navbar-search-sort">
+        <div class="search-sort-bar-row">
+            <div class="sort-row" style="margin-right: 1.5rem;">
+                <label for="sortSelect">Sort By:</label>
+                <select id="sortSelect">
+                    <option value="">None</option>
+                    <option value="byStartDate">Start Date</option>
+                    <option value="byDeadlineDate">Deadline Date</option>
+                    <option value="titleAsc">Title Name Asc</option>
+                    <option value="titleDesc">Title Name Desc</option>
+                </select>
+            </div>
+            <div class="search-bar-group">
+                <select id="filterSelect" class="search-filter">
+                    <option value="">All</option>
+                    <option value="priority-high">High Priority</option>
+                    <option value="priority-mid">Medium Priority</option>
+                    <option value="priority-low">Low Priority</option>
+                    <option value="status-inprogress">In Progress</option>
+                    <option value="status-backlog">Backlog</option>
+                    <option value="status-completed">Completed</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search by ID or Title...">
+            </div>
+            <button class="btn-secondary" id="searchSubmitBtn">Submit</button>
+        </div>
+    </div>
+</div>
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<aside class="profile-sidebar" id="profileSidebar">
+    <div class="sidebar-header">
+        <span class="close-sidebar" id="closeSidebar">&times;</span>
+    </div>
+    <div class="sidebar-content" id="sidebarContent"></div>
+</aside>
+<div id="toastContainer"></div>
+<div class="main-content" id="mainContent">
+    <div id="taskBoard" class="task-board"></div>
+</div>
+<script src="/js/navbar.js"></script>
+<script src="/js/home.js"></script>
+
+<!-- Create Task Modal Popup -->
+<div id="createTaskModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="closeCreateTaskModal">&times;</span>
+    <h2>Create Task</h2>
+    <form id="createTaskFormModal" style="display: flex; flex-direction: column; gap: 1rem; max-width: 420px;">
+      <label>Task Title:</label>
+      <input type="text" id="taskTitleInputModal" required placeholder="Enter task title" style="max-width: 100%;">
+      <label>Task Description:</label>
+      <textarea id="taskDescriptionInputModal" rows="3" required placeholder="Enter task description" style="max-width: 100%;"></textarea>
+      <label>Assign To:</label>
+      <select id="assignedToSelectModal" required style="max-width: 100%;"></select>
+      <label>Start Date:</label>
+      <input type="datetime-local" id="startDateInputModal" required style="max-width: 100%;">
+      <label>Deadline Date:</label>
+      <input type="datetime-local" id="deadlineDateInputModal" required style="max-width: 100%;">
+      <label>Status:</label>
+      <select id="statusSelectModal" style="max-width: 100%;">
+        <option value="IN_PROGRESS">In Progress</option>
+        <option value="BACKLOG">Backlog</option>
+        <option value="COMPLETED">Completed</option>
+      </select>
+      <label>Priority:</label>
+      <select id="prioritySelectModal" style="max-width: 100%;">
+        <option value="LOW">Low</option>
+        <option value="MID">Mid</option>
+        <option value="HIGH">High</option>
+      </select>
+      <button type="submit" class="btn-primary" id="saveTaskBtnModal" style="width: 100%; max-width: 100%;">Create Task</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html> 
